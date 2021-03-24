@@ -13,5 +13,5 @@ steps:
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-sql-elastic-pool-create/azuredeploy.json'
     csmParametersFileLink: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-sql-elastic-pool-create/azuredeploy.parameters.json'
-    overrideParameters: '-administratorLogin rjmadmin -administratorLoginPassword Password@001 -serverName rjmdevsqlelasticpooldemo'
+    overrideParameters: '-administratorLogin rjmadmin -administratorLoginPassword Password@001 -serverName ${{ variables.serverName }} -elasticPoolName rjmdevsqlelasticpool01 -edition Standard -capacity 100 -databaseCapacityMin 0 -databaseCapacityMax 100'
     deploymentMode: 'Incremental'
