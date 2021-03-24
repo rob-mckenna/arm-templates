@@ -149,29 +149,6 @@
         }
       }
     },
-    // {
-    //   "type": "Microsoft.Sql/servers/databases",
-    //   "name": "[concat(parameters('serverName'), '/', parameters('databasesNames')[copyIndex()])]",
-    //   "location": "[parameters('location')]",
-    //   "apiVersion": "2020-02-02-preview",
-    //   "dependsOn": [
-    //     "[resourceId('Microsoft.Sql/servers/', parameters('serverName'))]",
-    //     "[resourceId('Microsoft.Sql/servers/elasticpools', parameters('serverName'), parameters('elasticPoolName'))]"
-    //   ],
-    //   "sku": {
-    //       "name": "ElasticPool",
-    //       "tier": "[variables('skuTier')]",
-    //       "capacity": 0
-    //   },
-    //   "properties": {
-    //     "collation": "[parameters('databaseCollation')]",
-    //     "elasticPoolId": "[resourceId('Microsoft.Sql/servers/elasticpools', parameters('serverName'), parameters('elasticPoolName'))]"
-    //   },
-    //   "copy": {
-    //     "name": "addDatabasesInElasticPool",
-    //     "count": "[length(parameters('databasesNames'))]"
-    //   }
-    // },
     {
       "apiVersion": "2020-02-02-preview",
       "dependsOn": [
