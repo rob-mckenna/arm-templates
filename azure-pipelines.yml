@@ -1,0 +1,16 @@
+trigger:
+- main
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'rjm-aia-connection'
+    subscriptionId: 'f885f71a-f10d-470f-a15c-976e4e65c37c'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'rjm-dev-sql-elastic-pool-rg'
+    location: 'East US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'azuredeploy.json'
+    csmParametersFile: 'azuredeploy.parameters.json'
+    deploymentMode: 'Incremental'
